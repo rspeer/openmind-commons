@@ -1,0 +1,31 @@
+{% load voting_tags %}
+{% load commons_tags %}
+
+{% dict_entry_for_item assertion from vote_dict as vote %}
+{% dict_entry_for_item assertion from score_dict as score %}
+
+{% if pos %}
+<table class="mini_assertion pos">
+{% else %}
+<table class="mini_assertion neg">
+{% endif %}
+  <tr>
+    <td class="rate_buttons">
+      {% vote_arrow assertion 'assertion' vote 'up' %}
+      {% vote_arrow assertion 'assertion' vote 'down' %}
+    </td>
+    <td class="score">
+      <a href="{% url commonsense.views.assertion lang assertion.id %}">
+        {{ score.score }}
+      </a>
+    </td>
+    <td class="concept_td">
+      {% if freq %}
+        <span class="freq">{{ freq }}</span>
+      {% endif %}
+      <a href="{% url commonsense.views.concept lang text %}" class="concept">
+        {{ text }}
+      </a>
+    </td>
+  </tr>
+</table>

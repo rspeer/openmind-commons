@@ -1,0 +1,24 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+
+{% block subnav %}
+    <ul>
+        <li><a href="{% url concepts lang %}">{% trans "Overview" %}</a></li>
+        <li><a href="{% url statements_random lang %}">{% trans "Random statements" %}</a></li>
+        <li><a href="{% url statements_recent lang %}">{% trans "Recently added" %}</a></li>
+        <li>{% include "commonsense/_concept_form.html" %}</li>
+    </ul>
+{% endblock %}
+
+
+{% block rtab_id %}id="concepts_tab"{% endblock %}
+
+{% block extra_body %}
+<script type="text/javascript">
+Event.observe(window, "load", function()
+{
+    new VoteHijacker("statement");
+});
+</script>
+{% endblock %}
+

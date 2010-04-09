@@ -1,0 +1,16 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+
+{% block title %}
+  {% trans "Add new knowledge" %}
+{% endblock %}
+
+{% block subnav %}
+    <ul><li>
+        {% include "commonsense/_concept_form.html" %}
+    </li></ul>
+{% endblock %}
+
+
+{% block rtab_id %}id="add_tab"{% endblock %}
+

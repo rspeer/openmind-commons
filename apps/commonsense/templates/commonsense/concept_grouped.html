@@ -1,0 +1,69 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load voting_tags %}
+{% load commons_tags %}
+
+{% block head_title %}
+{% trans "Knowledge about" %} {{ concept_name }}
+{% endblock head_title %}
+
+{% block body %}
+<h1>{% trans "Knowledge about" %} <b>{{concept_name}}</b></h1>
+
+{% comment %} This is filled in with openmind.js. {% endcomment %}
+
+<div class="similar">
+    <b>Similar concepts:</b>
+    <span id="similar">
+        &nbsp;<img src="{{ MEDIA_URL }}ajax-loader.gif" alt="loading" valign="top" />
+    </span>
+</div>
+
+{% comment %}
+<div class="threads">
+  {% for thread in concept.get_terminating_threads %}
+    {% include "commonsense/_mini_thread.html" %}
+  {% endfor %}
+  {% for thread in concept.get_containing_threads %}
+    {% include "commonsense/_mini_thread.html" %}
+  {% endfor %}
+</div>
+{% endcomment %}
+
+<div class="questions" id="questions">
+    &nbsp;
+</div>
+
+{% votes_by_user user on all_assertion_list as vote_dict %}
+{% scores_for_objects all_assertion_list as score_dict %}
+{% for feature, assertion_list in grouped_assertions %}
+  <h3 class="feature_caption">{{ feature.nl_statement }}</h3>
+  <blockquote>
+   
+    <p>
+      <a href="{% url_for_feature feature lang %}">
+        {% trans "Add another" %}
+      </a>
+    </p>
+    {% for text, freq, pos, assertion in assertion_list %}
+      {% include "commonsense/_mini_assertion.html" %}
+    {% endfor %}
+  </blockquote>
+  <br class="section_break">
+{% endfor %}
+{% endblock body %}
+
+{% block extra_body %}
+<script type="text/javascript">
+var concept="{{ concept_name|urlencode }}";
+Event.observe(window, "load", function()
+{
+    jQuery('#similar').html('&nbsp;').load(
+        '/{{lang}}/concepts/near/'+concept+'/'
+    );
+    jQuery('#questions').html('&nbsp;').load(
+        '/{{lang}}/features/predict/'+concept+'/'
+    );
+});
+</script>
+{% endblock extra_body %}

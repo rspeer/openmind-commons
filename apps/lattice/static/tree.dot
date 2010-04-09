@@ -1,0 +1,10 @@
+digraph G {
+  node [style=filled];
+  node0 [label="thing"];
+  node1 [label="animate"]; node0 -> node1;
+  node2 [label="inanimate"]; node0 -> node2;
+  node3 [label="animal"]; node1 -> node3;
+  node4 [label="mammal"]; node3 -> node4;
+  node5 [label="cat"]; node4->node5;
+  node6 [label="dog", fillcolor=green]; node4->node6;
+}

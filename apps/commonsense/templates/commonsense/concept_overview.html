@@ -1,0 +1,23 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block body %}
+  <h2>{% trans "Look up a concept" %}</h2>
+  <p>{% blocktrans %}
+    Type a word or short phrase here to see what Open Mind knows about that
+    concept.
+  {% endblocktrans %}
+  </p>
+  <p>
+  {% include "commonsense/_concept_form.html" %}
+  </p>
+  <h2>{% trans "Some random concepts" %}</h2>
+  <p>{% trans "Here are some of the concepts that Open Mind knows about:" %}</p>
+  <ul class="conceptlist">
+  {% for name in concepts %}
+    <li class="concept">{% link_concept_text name lang %}</li>
+  {% endfor %}
+  </ul>
+{% endblock %}
+

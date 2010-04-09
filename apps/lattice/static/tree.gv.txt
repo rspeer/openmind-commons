@@ -1,0 +1,19 @@
+digraph G {
+	node [label="\N", style=filled];
+	graph [bb="0,0,249,324",
+		_draw_="c 5 -white C 5 -white P 4 0 0 0 324 249 324 249 0 ",
+		xdotversion="1.2"];
+	node0 [label=thing, pos="126,306", width="1.00", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 126 306 36 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 126 301 0 36 5 -thing "];
+	node1 [label=animate, pos="63,234", width="1.39", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 63 234 50 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 63 229 0 56 7 -animate "];
+	node2 [label=inanimate, pos="190,234", width="1.64", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 190 234 59 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 190 229 0 69 9 -inanimate "];
+	node3 [label=animal, pos="63,162", width="1.19", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 63 162 43 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 63 157 0 46 6 -animal "];
+	node4 [label=mammal, pos="63,90", width="1.44", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 63 90 52 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 63 85 0 59 6 -mammal "];
+	node5 [label=cat, pos="27,18", width="0.75", height="0.50", _draw_="S 6 -filled c 5 -black C 9 -lightgrey E 27 18 27 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 27 13 0 21 3 -cat "];
+	node6 [label=dog, fillcolor=green, pos="100,18", width="0.78", height="0.50", _draw_="S 6 -filled c 5 -black C 5 -green E 100 18 28 18 ", _ldraw_="F 14.000000 11 -Times-Roman c 5 -black T 100 13 0 25 3 -dog "];
+	node0 -> node1 [pos="e,78,252 111,289 103,280 94,269 85,260", _draw_="c 5 -black B 4 111 289 103 280 94 269 85 260 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 87 257 78 252 82 262 "];
+	node0 -> node2 [pos="e,174,252 141,289 149,280 158,269 167,260", _draw_="c 5 -black B 4 141 289 149 280 158 269 167 260 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 170 262 174 252 165 257 "];
+	node1 -> node3 [pos="e,63,180 63,216 63,208 63,199 63,190", _draw_="c 5 -black B 4 63 216 63 208 63 199 63 190 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 67 190 63 180 60 190 "];
+	node3 -> node4 [pos="e,63,108 63,144 63,136 63,127 63,118", _draw_="c 5 -black B 4 63 144 63 136 63 127 63 118 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 67 118 63 108 60 118 "];
+	node4 -> node5 [pos="e,35,35 54,72 49,64 44,53 40,44", _draw_="c 5 -black B 4 54 72 49 64 44 53 40 44 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 43 42 35 35 37 45 "];
+	node4 -> node6 [pos="e,91,35 72,72 77,64 82,53 86,44", _draw_="c 5 -black B 4 72 72 77 64 82 53 86 44 ", _hdraw_="S 5 -solid S 15 -setlinewidth(1) c 5 -black C 5 -black P 3 89 45 91 35 83 42 "];
+}

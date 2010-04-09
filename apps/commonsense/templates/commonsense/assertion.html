@@ -1,0 +1,21 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block rtab_id %}id="statements_tab"{% endblock %}
+
+{% block head_title %}
+{% trans "Assertion" %}
+{% endblock head_title %}
+
+{% block body %}
+  <h2 class="assertion">
+    {% trans "Assertion" %}: <b>{{ the_assertion.nl_repr }}</b>
+  </h2>
+  <p>{% trans "Score" %}: <b>{{ the_assertion.score }}</b></p>
+  {% if raw_assertions %}
+      <p>{% trans "Users have made the following statements that contributed to this assertion:" %}</p>
+      
+      {% include "commonsense/_raw_items.html" %}
+  {% endif %}
+{% endblock %}

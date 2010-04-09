@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="iso-8859-1"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<title>
+Colorizer v1.0
+</title>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+<link rel="stylesheet" type="text/css" href="{{MEDIA_ROOT}}/colorizer/styles.css" />
+</head>
+<body>
+<div id="content">
+<h2>Colorizer v1.0</h2>
+<div class="form-container">
+{% if coloredtext and not errors %}
+	{% if coloredtext.colored %}<div class="colors" style="background-color:{{coloredtext.color}}; border-color:{{coloredtext.bordercolor}}; color:{{coloredtext.fontcolor}}">{% endif %}
+	{% if coloredtext.paragraphs %}
+		{% for paragraph in coloredtext.paragraphs %}
+			{% if paragraph.colored %}<div class="colors" style="background-color:{{paragraph.color}}; border-color:{{paragraph.bordercolor}}; color:{{paragraph.fontcolor}}">{% endif %}
+			{% if paragraph.sentences %}
+				{% for sentence in paragraph.sentences %}
+						{% if sentence.colored %}<div class="colorsentence" style="background-color:{{sentence.color}}; border-color:{{sentence.bordercolor}}; color:{{sentence.fontcolor}};">{% endif %}
+						{% if sentence.words %}
+							{% for word in sentence.words %}
+								{% if word.colored %}<span class="colorword" style="background-color:{{word.color}}; border-color:{{word.bordercolor}}; color:{{word.fontcolor}}">{% endif %}
+								{% if word.characters %}
+									{{word.characters.0}}
+								{% else %}
+									{{word}}
+								{% endif %}
+								{% if word.colored %}</span>{% endif %}
+							 {% endfor %}
+						{% else %}
+							{{sentence}}
+						{% endif %}
+						{% if sentence.colored %}</div>{% endif %}
+				{% endfor %}
+			{% else %}
+				{{paragraph}}
+			{% endif %}
+			{% if paragraph.colored %}</div>{% endif %}
+		{% endfor %}
+	{% else %}
+		{{coloredtext}}
+	{% endif %}
+	{% if coloredtext.colored %}</div>{% endif %}
+{% endif %}
+{% if errors %}
+<div class="errors">
+		<p><em>Oops... the following errors were encountered:</em></p>
+
+		<ul>
+			{% for error in errors %}
+			<li>{{error}}</li>
+			{% endfor %}
+		</ul>
+		<p>Your request has <strong>not</strong> been processed.</p>
+</div>
+{% endif %}
+
+	<form action="" method="post">
+	
+	<p class="legend">Please enter any English text and select the smallest lexical unit that should be colorized.</p><p class="legend"><strong>Note:</strong> Denote paragraphs by inserting one empty line between each adjacent pair of paragraphs.</p>
+	
+	<fieldset>
+		<legend>Input</legend>
+			<div><label for="text" class="error">Text <em>*</em></label> <textarea id="text" name="text" rows="10" cols="50" >{% if originaltext %}{{originaltext}}{% endif %}</textarea></div>
+	</fieldset>
+	<fieldset>
+		<legend>Options</legend>
+			<div class="controlset">
+				<span class="label">Color Depth</span>
+
+				<div>
+				<input name="colordepth" id="wholetext" value="wholetext" type="radio" /><label for="wholetext">Whole Text</label><br />
+				<input name="colordepth" id="paragraph" value="paragraph" type="radio" /><label for="paragraph">Paragraph</label><br />
+				<input name="colordepth" id="sentence" value="sentence" type="radio" /><label for="sentence">Sentence</label><br />
+				<input name="colordepth" id="word" value="word" type="radio" checked="checked"/><label for="word">Word</label><br />
+				</div>
+			</div>
+	</fieldset>
+
+    <fieldset>
+        <legend>Examples</legend>
+        <ul id="examples"/>
+    </fieldset>
+	
+    <div class="buttonrow">
+		<input type="submit" value="Submit" class="button" />
+	</div>
+
+</form>
+</div><!-- /form-container-->
+</div><!-- /content -->
+<script type="text/javascript" src="{{MEDIA_ROOT}}/colorizer/examples.js"></script>
+</body>
+</html>

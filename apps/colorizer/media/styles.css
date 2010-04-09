@@ -1,0 +1,97 @@
+body {
+  background-color: #e1ddd9;
+  font-size: 11pt;
+  font-family: Georgia, "Times New Roman", serif;
+  color:#564b47;  
+  padding:20px;
+  margin:0px;
+  text-align: center;
+}
+
+
+#content { 	
+  text-align: left;
+  vertical-align: middle;	
+  margin: 0px auto;
+  padding: 0px;
+  width: 750px;
+  background-color: #ffffff;
+  border: 1px solid #564b47;
+}
+
+p, h1, pre {
+margin: 0px; 
+padding: 5px 10px; 
+}
+ul, li {
+    margin-top: 0px;
+    margin-bottom: 0px;
+}
+
+p.colored{
+  margin: 5px;
+  padding: 5px 10px;
+  border: 1px solid;
+}
+h1 {
+font-size: 11px;
+text-transform:uppercase;
+text-align: right;
+color: #564b47;
+background-color: #90897a;
+}
+
+
+a { 
+color: #aa6688;
+font-size: 10pt;
+background-color:transparent;
+text-decoration: none; 
+}
+ 
+pre { 
+color: #564b47;
+font-size: 10pt;
+background-color:transparent;
+font-family: Courier, Monaco, Monospace;
+}
+h2 { margin: 0px; padding: 10px; font-family: Georgia, "Times New Roman", Times, serif; font-size: 200%; font-weight: normal; color: #FFF; background-color: #CCC; border-bottom: #BBB 2px solid; }
+p#copyright { margin: 20px 10px; font-size: 90%; color: #999; }
+
+/*colorized div styles */
+div.colors {margin: 10px;  padding: 5px; border-style:solid; border-width:1px; line-height:2em;}
+.colorword{border-style:solid; border-width:1px; padding: 2px; margin-right:
+2px;}
+.colorsentence{border-style:solid; border-width:1px; margin-right:5px;padding:2px;}
+
+
+/* Form styles */
+div.form-container { margin: 10px; padding: 5px; background-color: #FFF; border: #EEE 1px solid; }
+
+p.legend { margin-bottom: 1em; }
+p.legend em { color: #C00; font-style: normal; }
+
+div.errors { margin: 0 0 10px 0; padding: 5px 10px; border: #FC6 1px solid; background-color: #FFC; }
+div.errors p { margin: 0; }
+div.errors p em { color: #C00; font-style: normal; font-weight: bold; }
+
+div.form-container form p { margin: 0; }
+div.form-container form p.note { margin-left: 170px; font-size: 90%; color: #333; }
+div.form-container form fieldset { margin: 10px 0; padding: 10px; border: #DDD 1px solid; }
+div.form-container form legend { font-weight: bold; color: #666; }
+div.form-container form fieldset div { padding: 0.25em 0; }
+div.form-container label, 
+div.form-container span.label { margin-right: 10px; padding-right: 10px; width: 150px; display: block; float: left; text-align: right; position: relative; }
+div.form-container label.error, 
+div.form-container span.error { color: #C00; }
+div.form-container label em, 
+div.form-container span.label em { position: absolute; right: 0; font-size: 120%; font-style: normal; color: #C00; }
+div.form-container input.error { border-color: #C00; background-color: #FEF; }
+div.form-container input:focus,
+div.form-container input.error:focus, 
+div.form-container textarea:focus {	background-color: #FFC; border-color: #FC6; }
+div.form-container div.controlset label, 
+div.form-container div.controlset input { display: inline; float: none; }
+div.form-container div.controlset div { margin-left: 170px; }
+div.form-container div.buttonrow { margin-left: 180px; }
+

@@ -1,0 +1,16 @@
+{% load commons_tags %}
+{% load i18n %}
+
+{% if predictions %}
+    <h3>{% trans "Open Mind wants to know..." %}</h3>
+    <p>{% trans "Are these statements true?" %}</p>
+    <ul>
+    {% for prediction in predictions %}
+      <li>{% format_proposition prediction %}
+      <br><a href="{% answer_url prediction 'yes' %}"><b>Yes</b></a>
+          <a href="{% answer_url prediction 'no' %}"><b>No</b></a>
+          <a href="{% answer_url prediction 'maybe' %}"><b>Sort of</b></a>
+      </li>
+    {% endfor %}
+{% endif %}
+</ul>

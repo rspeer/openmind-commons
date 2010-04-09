@@ -1,0 +1,35 @@
+{% load commons_tags %}
+{% load voting_tags %}
+{% load pagination_tags %}
+{% load in_filter %}
+{% load i18n %}
+
+{% autopaginate raw_assertions %}
+{% votes_by_user user on raw_assertions as vote_dict %}
+
+<table class="list">
+    {% for raw in raw_assertions %}
+        <tr class="{% cycle odd,even as parity %}">
+            {% dict_entry_for_item raw from vote_dict as vote %}
+            <td class="vote_up">
+                {% vote_arrow raw 'statement' vote 'up' %}
+            </td>
+            <td class="score" id="statement_{{raw.id}}_score">
+                {{ raw.score }}
+            </td>
+            <td class="vote_down">
+                {% vote_arrow raw 'statement' vote 'down' %}
+            </td>
+            <td class="sentence_td">
+                <span class="sentence">{% linked_assertion raw %}</span>
+            </td>
+            <td class="attribution">
+                {% trans "by" %}
+                {% user_link raw.creator %}
+            </td>
+        </tr>
+    {% endfor %}
+</table>
+
+{% paginate %}
+

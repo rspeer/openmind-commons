@@ -1,0 +1,26 @@
+{% extends "site_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block rtab_id %}id="statements_tab"{% endblock %}
+
+{% block subnav %}
+    <ul>
+        <li><a href="{% url statements lang %}">{% trans "Overview" %}</a></li>
+        <li><a href="{% url statements_random lang %}">{% trans "Random statements" %}</a></li>
+        <li><a href="{% url statements_recent lang %}">{% trans "Recently added" %}</a></li>
+    </ul>
+{% endblock %}
+
+{% block head_title %}
+{% trans "Statements in Open Mind" %}
+{% endblock head_title %}
+
+{% block extra_body %}
+<script type="text/javascript">
+Event.observe(window, "load", function()
+{
+    new VoteHijacker("statement");
+});
+</script>
+{% endblock %}

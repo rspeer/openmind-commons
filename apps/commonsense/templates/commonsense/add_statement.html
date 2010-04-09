@@ -1,0 +1,20 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block body %}
+<h2>{% trans "Add a new statement" %}</h2>
+<p>{% include "commonsense/_statement_form.html" %}</p>
+
+{% if show_frames %}
+<h3>{% trans "Or, use another sentence frame" %}</h3>
+<ul>
+{% for frame in possible_frames %}
+  <li><a href="{% url add_statement lang frame.id text1 text2 %}">
+    {{ frame.display }}
+  </a></li>
+{% endfor %}
+</ul>
+{% endif %}
+{% endblock body %}
+

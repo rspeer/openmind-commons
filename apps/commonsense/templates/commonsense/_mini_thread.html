@@ -1,0 +1,5 @@
+<div class="thread">
+  {% for concept in thread.full_thread_concepts %}
+    {{concept.text}} {% if not forloop.last %} -> {% endif %}
+  {% endfor %}
+</div>

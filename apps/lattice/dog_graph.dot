@@ -1,0 +1,21 @@
+digraph G {
+concept_616 -> concept_3473 [label="AtLocation"];
+concept_537 -> concept_3473 [label="AtLocation"];
+concept_6651 -> concept_4850 [label="IsA"];
+concept_537 -> concept_18539 [label="CapableOf"];
+concept_18539 -> concept_33 [label="PartOf"];
+concept_5 -> concept_18539 [label="CapableOf"];
+concept_220 -> concept_3473 [label="AtLocation"];
+concept_7815 -> concept_4850 [label="IsA"];
+concept_537 -> concept_4850 [label="IsA"];
+concept_33 [label="tree", URL="/en/concept/tree/"];
+concept_5 [label="something"];
+concept_7815 [label="rabbit"];
+concept_616 [label="cat"];
+concept_18539 [label="bark"];
+concept_3473 [label="kennel"];
+concept_4850 [label="mammal"];
+concept_537 [label="dog"];
+concept_6651 [label="dolphin"];
+concept_220 [label="wiener dog"];
+}

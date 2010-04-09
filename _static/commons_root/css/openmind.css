@@ -1,0 +1,182 @@
+h1, h2 {
+    font-weight: normal;
+}
+
+.mini_assertion {
+    position: relative;
+    margin-right: 0.5em;
+    margin-bottom: 1ex;
+    float: left;
+    text-decoration: none;
+    height: 3ex;
+    padding-top: 0.5ex;
+    width: 16em;
+    height: 4ex;
+}
+
+.pos {
+    background-color: #e0eeff;
+    border: 1px solid #88d;
+    color: black;
+}
+
+.neg {
+    background-color: #568;
+    border: 1px solid #004;
+    color: white;
+}
+
+.mini_assertion .score a {
+    text-decoration: none;
+    color: white;
+}
+
+.mini_assertion .score a:hover {
+    text-decoration: underline;
+    color: #eef;
+}
+
+.score {
+    font-weight: bold;
+}
+
+.freq {
+    color: #555;
+    font-size: 80%;
+}
+
+.pos .freq {
+    color: #555;
+}
+
+.neg .freq {
+    color: #cde;
+}
+
+.section_break {
+    clear: left;
+}
+
+.dark {background-color: #eee;}
+table.list tr td {
+    padding: 0.5ex;
+}
+
+.userlink img {
+    vertical-align: middle;
+}
+
+.odd {
+    background-color: #eee;
+}
+
+.sentence {
+    font-size: 125%;
+    margin-left: 1em;
+    margin-right: 1em;
+}
+
+.score {
+    text-align: center;
+}
+
+td.rate_buttons {
+    width: 22px;
+    background-color: #89a;
+}
+
+td.rate_buttons input {
+    position: relative;
+    padding: 0;
+    top: 1px;
+}
+
+.mini_assertion td.score {
+    text-align: left;
+    width: 3ex;
+    background-color: #89a;
+}
+
+td.concept_td {
+    padding: 0 1ex 0 1ex;
+}
+
+.pos td.concept_td a {
+    color: black;
+    text-decoration: none;
+}
+
+.pos td.concept_td a:hover {
+    color: #005;
+    text-decoration: underline;
+}
+
+.neg td.concept_td a {
+    color: white;
+    text-decoration: none;
+}
+
+.neg td.concept_td a:hover {
+    color: #ddf;
+    text-decoration: underline;
+}
+
+.positive {
+    color: green;
+}
+
+.negative, .zero {
+    color: red;
+}
+
+table.list {
+    border: 1px solid #ccc;
+}
+
+div.similar {
+    line-height: 2em; 
+}
+
+#similar a {
+    padding-left: 0.3em;
+}
+
+div.questions a {
+    margin-left: 1ex;
+}
+
+div.questions li {
+    margin-bottom: 0.5ex;
+}
+
+#subnav ul li form input[type="text"] {
+    padding: 1px;
+    margin: 0px;
+    border: solid 1px #C6C6C6;
+    border-bottom: solid 1px #E3E3E3;
+    color: #666;
+    font-size: 9pt;
+}
+
+#subnav ul li form input[type="submit"] {
+    padding: 1px;
+    margin: 1px;
+    border: solid 1px #C6C6C6;
+    color: #666;
+    font-size: 9pt;
+}
+
+.subnav form {
+    display: inline;
+}
+
+td.language {
+    font-weight: bold;
+    padding: 0 2em 0.5ex 2em;
+}
+
+#tabhead .logo img {
+    float: left;
+    height: auto;
+    width: auto;
+}

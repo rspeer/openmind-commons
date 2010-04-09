@@ -1,0 +1,48 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load voting_tags %}
+{% load commons_tags %}
+
+{% block head_title %}
+{% trans "Knowledge about" %} {{ concept_name }}
+{% endblock head_title %}
+
+{% block body %}
+<h1>{% trans "Knowledge about" %} <b>{{concept_name}}</b></h1>
+<div class="similar">
+    <b>Similar concepts:</b>
+    <span id="similar">
+        &nbsp;<img src="{{ MEDIA_URL }}ajax-loader.gif" alt="loading" valign="top" />
+    </span>
+</div>
+
+<div class="questions" id="questions">
+    &nbsp;
+</div>
+{% include "commonsense/_raw_items.html" %}
+{% endblock body %}
+
+{% block extra_body %}
+<script type="text/javascript">
+var concept="{{ concept_name|urlencode }}";
+Event.observe(window, "load", function()
+{
+    jQuery('#similar').html('&nbsp;').load(
+        '/analogyspace/{{lang}}/similar_concepts/'+concept+'/'
+    );
+    jQuery('#questions').html('&nbsp;').load(
+        '/analogyspace/{{lang}}/predict_features/'+concept+'/'
+    );
+});
+</script>
+{% if user.is_authenticated %}
+
+    <script type="text/javascript">
+    Event.observe(window, "load", function()
+    {
+        new VoteHijacker("statement");
+    });
+    </script>
+
+{% endif %}
+{% endblock extra_body %}

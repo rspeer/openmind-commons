@@ -1,0 +1,54 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block rtab_id %}id="home_tab"{% endblock %}
+
+{% block head_title %}
+{% trans "Welcome" %}
+{% endblock head_title %}
+
+{% block body %}
+{% blocktrans %}
+<h2>Welcome to Open Mind Common Sense!</h2>
+
+<p>Computers don't currently know the basic things about the world that we consider "common sense." Here, you can help build a database of such knowledge in simple English sentences. The computer will analyze these sentences to connect concepts and draw new conclusions from the things you teach it.</p>
+
+<h2>Getting started</h2>
+<p>If you want to interact with OpenMind and teach it new things, <b><a href="/account/login">log in</a>
+ to get started!</b></p>
+{% endblocktrans %}
+
+<h2>Languages</h2>
+<p>
+{% trans "Open Mind is collecting knowledge in multiple languages:" %}
+</p>
+<table class="languagetable">
+{% for language in languages %}
+  <tr>
+    <td class="language">
+      <a href="/{{language.0}}/concept/">
+        {{language.1}}
+      </a>
+    </td>
+    <td class="count">{{language.2}} statements</td>
+  </tr>
+{% endfor %}
+</table>
+
+{% blocktrans %}
+<h2>The big picture</h2>
+<p>
+This project, Open Mind Common Sense, enables computers to learn general knowledge from ordinary people
+ over the Web. It is the product of ongoing research by the <a href="http://csc.media.mit.edu/">Commonsense Computing Initiative</a> at the MIT Media Lab. You can find related projects that other groups are
+ working on at <a href="http://openmind.org/">OpenMind.org</a>.
+</p>
+<p>
+The information collected by this site becomes part of <a href="http://conceptnet.media.mit.edu/">ConceptNet</a>, an open-source, multilingual semantic network of general knowledge. The reasoning is powered
+ by <a href="http://divisi.media.mit.edu/">Divisi</a>, a tool for reasoning by analogy over semantic networks.
+</p>
+<p>For more information and updates, visit our <a href="http://conceptnet.blogspot.com/">blog</a>.</p>
+{% endblocktrans %}
+        
+
+{% endblock %}

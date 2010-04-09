@@ -1,0 +1,4 @@
+{% load commons_tags %} 
+{% for text, score in similarities %}
+  {% link_concept_text text lang %}
+{% endfor %}

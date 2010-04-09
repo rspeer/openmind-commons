@@ -1,0 +1,19 @@
+{% extends "commonsense/concept_base.html" %}
+{% load i18n %}
+{% load commons_tags %}
+
+{% block body %}
+  <h2>{% trans "These are some of the statements in Open Mind..." %}</h2>
+  <p>{% blocktrans %}
+    Use the arrows to vote on the statements.
+    You should vote up statements that you consider common sense,
+    and vote down statements that you consider nonsensical, false, confusing,
+    or biased.
+  {% endblocktrans %}</p>
+  {% include "commonsense/_raw_items.html" %}
+
+  <p>
+  <a href="{% url statements_recent_n lang next %}">Get more statements</a>
+  </p>
+{% endblock %}
+

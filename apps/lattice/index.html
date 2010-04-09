@@ -1,0 +1,52 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8" />
+	<title>Lattice Learning with ConceptNet</title>
+	<link rel="stylesheet" type="text/css" href="static/canviz.css" />
+	<!--[if lte IE 6]><link rel="stylesheet" type="text/css" href="static/canviz-ie6.css" /><![endif]-->
+	<!--[if IE]><script type="text/javascript" src="static/excanvas/excanvas.js"></script><![endif]-->
+	<script type="text/javascript" src="static/prototype.js"></script>
+	<script type="text/javascript" src="static/path.js"></script>
+	<script type="text/javascript" src="static/canviz.js"></script>
+	<script type="text/javascript" src="static/x11colors.js"></script>
+	<script type="text/javascript"><!--
+Ajax.Responders.register({
+	onCreate: function() {
+		$('busy').show();
+	},
+	onComplete: function() {
+		if (0 == Ajax.activeRequestCount) {
+			$('busy').hide();
+		}
+	}
+});
+
+var canviz;
+document.observe('dom:loaded', function() {
+	canviz = new Canviz('graph_container');
+	//canviz.setImagePath('graphs/images/');
+	canviz.setScale(1.0);
+	canviz.load('graph/');
+	canviz.nodeObserve('click', function(evt) {
+	  var name = this.id.match(/^elt_(.*)$/)[1];
+	  alert(name);
+        });
+});
+// --></script>
+</head>
+<body>
+
+<div id="busy" style="display:none">Loading...</div>
+
+<div id="page_container">
+
+<div id="graph_container"></div>
+
+<div id="debug_output"></div>
+
+</div>
+
+</body>
+</html>

@@ -1,0 +1,10 @@
+{% load commons_tags %}
+
+<form class="statement" action="{% url submit_statement lang %}" method="POST">
+  {% statement_form frame text1 text2 %}.
+  <input type="hidden" name="frame_id" value="{{ frame_id }}" />
+  <input type="hidden" name="activity" value="commons2 template" />
+  <input type="hidden" name="vote" value="1" />
+  <input type="submit" value="Add" />
+</form>
+
